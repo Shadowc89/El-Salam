@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f4ef">
+    <script>
+        try {
+            const savedTheme = localStorage.getItem("el-salam-theme");
+            if (savedTheme === "light" || savedTheme === "dark") {
+                document.documentElement.dataset.theme = savedTheme;
+                if (savedTheme === "dark") {
+                    document.querySelector('meta[name="theme-color"]').content = "#121b18";
+                }
+            }
+        } catch (error) {
+            console.error("Could not restore the saved theme.", error);
+        }
+    </script>
+    <link rel="icon" href="icon.jpg" type="image/x-icon">
+    <meta name="description" content="تعرف على حكاية EL SALAM وفلسفتنا في الأناقة اليومية.">
+    <title>EL SALAM STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+    </noscript>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/storefront.css">
+    <link rel="stylesheet" href="css/product-details.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <button class="icon-btn mobile-menu-btn" type="button" aria-label="فتح القائمة" aria-expanded="false"
+                onclick="toggleMobileNav(this)">☰</button>
+            <a class="brand" href="index.html" aria-label="EL SALAM الصفحة الرئيسية"><span class="brand-en">EL
+                    SALAM</span><span class="brand-ar">اختياراتك... بذوق مختلف</span></a>
+            <nav class="main-nav" aria-label="القائمة الرئيسية">
+                <a href="index.html">الرئيسية</a><a href="categories.html">الأقسام</a><a
+                    href="products.html">المنتجات</a><a href="about.html" aria-current="page">عنا</a><a
+                    href="contact.html">تواصل معنا</a>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn theme-toggle" type="button" aria-label="تفعيل الوضع الليلي" aria-pressed="false"
+                    title="تفعيل الوضع الليلي" onclick="toggleTheme()">
+                    <span class="theme-toggle-track" aria-hidden="true">
+                        <i class="fa-solid fa-moon theme-icon-dark"></i>
+                        <i class="fa-solid fa-sun theme-icon-light"></i>
+                        <span class="theme-toggle-thumb"></span>
+                    </span>
+                </button>
+                <a class="icon-btn" href="products.html" aria-label="الانتقال للمنتجات"><i
+                        class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
+                <button class="icon-btn cart-trigger" type="button" aria-label="فتح سلة التسوق" aria-expanded="false"
+                    onclick="openCart(this)"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><span
+                        class="cart-count" id="cart-count">0</span></button>
+            </div>
+        </div>
+    </header>
+    <main class="page-shell">
+        <section class="page-hero container">
+            <div class="section-kicker">A LITTLE ABOUT US</div>
+            <h1>مش مجرد ملابس <br><span>دي طريقتك في التعبير.</span></h1>
+            <p>نؤمن أن الأناقة الحقيقية تبدأ من شعورك بالراحة وتنمو مع اختيارات تشبه شخصيتك.</p>
+        </section>
+        <section class="editorial about-story">
+            <div class="editorial-image"><img
+                    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1100&q=85"
+                    alt="تفاصيل وتنسيقات من عالم الأزياء" loading="lazy"></div>
+            <div class="editorial-copy">
+                <div class="section-kicker">OUR POINT OF VIEW</div>
+                <h2>البساطة ليست عادية؛ إنها اختيار التفاصيل التي تستحق.</h2>
+                <p>في EL SALAM بنهتم بالتفاصيل اللي بتخلي كل قطعة مناسبة ليومك ومريحة لأسلوبك وقريبة من شخصيتك. نختار
+                    قطعًا عملية بخامات مريحة وتصاميم تفضل جزءًا من خزانة ملابسك.</p>
+                <a class="text-link" href="products.html">اكتشف المجموعة ←</a>
+            </div>
+        </section>
+        <section class="about-values container">
+            <div><span>01</span>
+                <h2>اختيارات مدروسة</h2>
+                <p>مجموعة متوازنة من القطع التي يسهل تنسيقها كل يوم.</p>
+            </div>
+            <div><span>02</span>
+                <h2>راحة من أول لمسة</h2>
+                <p>نهتم بالخامات والتفاصيل التي تجعل ارتداء القطعة تجربة أفضل.</p>
+            </div>
+            <div><span>03</span>
+                <h2>أسلوب يشبهك</h2>
+                <p>مساحة متنوعة لكل شخص يختار ما يعبر عنه بطريقته.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand"><a class="brand" href="index.html"><span class="brand-en">EL SALAM</span><span
+                        class="brand-ar">اختياراتك... بذوق مختلف</span></a>
+                <p>مساحة لكل شخص يحب البساطة ويهتم بالتفاصيل ويختار ما يشبهه.</p>
+            </div>
+            <div class="footer-col">
+                <h3>تصفح</h3><a href="categories.html">الأقسام</a><a href="products.html">كل المنتجات</a><a
+                    href="products.html?category=sale">العروض</a>
+            </div>
+            <div class="footer-col">
+                <h3>خدمة العملاء</h3><a href="contact.html#returns">سياسة الاستبدال</a><a
+                    href="contact.html#faq">الأسئلة الشائعة</a>
+            </div>
+            <div class="footer-col">
+                <h3>تواصل معنا</h3><a href="contact.html">قنوات التواصل قريبًا</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 EL SALAM. جميع الحقوق محفوظة.</span><span>صُمم بعناية لعشاق
+                الأناقة.</span></div>
+    </footer>
+    <div class="overlay" id="overlay" onclick="closePanels()"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title"
+        aria-hidden="true" inert tabindex="-1">
+        <div class="drawer-header">
+            <div>
+                <h2 id="cart-title">سلة التسوق</h2><span class="drawer-subtitle" id="drawer-count">0 قطع</span>
+            </div>
+            <div class="drawer-actions"><button class="close-btn" type="button" aria-label="إغلاق السلة"
+                    onclick="closePanels()"><i class="fa-solid fa-circle-xmark"></i></button></div>
+        </div>
+        <div class="cart-items" id="cart-items" role="list" aria-label="منتجات السلة"></div>
+        <div class="cart-summary">
+            <div class="subtotal-row"><span>المجموع الفرعي</span><span id="cart-total">0 جنيه</span></div>
+            <button class="checkout-btn" id="checkout-btn" type="button" onclick="checkout()">إتمام الطلب</button>
+        </div>
+    </aside>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="قائمة الهاتف" aria-hidden="true">
+        <div class="mobile-nav-head"><span class="brand-en">EL SALAM</span><button class="close-btn" type="button"
+                aria-label="إغلاق القائمة" onclick="closePanels()"><i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+        <div class="mobile-nav-links"><a href="index.html">الرئيسية</a><a href="categories.html">الأقسام</a><a
+                href="products.html">المنتجات</a><a href="about.html">عنا</a><a href="contact.html">تواصل معنا</a>
+        </div>
+    </nav>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="js/store-data.js?v=20261106-order-flow" defer></script>
+    <script src="js/catalog.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/app.js?v=20261106-order-flow" defer></script>
+</body>
+
+</html>
